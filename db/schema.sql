@@ -1,9 +1,9 @@
-USE burgers_db; 
+USE sweets_db; 
 
-DROP TABLE IF EXISTS burgers; 
+DROP TABLE IF EXISTS sweets; 
 
-CREATE TABLE burgers(
+CREATE TABLE sweets(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-    burger_name VARCHAR(30) NOT NULL, 
+    dessert_name VARCHAR(30) NOT NULL, 
     devoured BOOLEAN
 )

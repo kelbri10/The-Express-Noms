@@ -1,4 +1,4 @@
-Use burgers_db; 
+Use sweets_db; 
 
-INSERT INTO burgers(burger_name, devoured)
-VALUES('Whiskey Glazed Burger', TRUE), ('Loaded Cheese Fry Burger', FALSE), ('Bacon Cheeseburger', FALSE);
+INSERT INTO sweets(dessert_name, devoured)
+VALUES('Red Velvet Cupcake', TRUE), ('Triple Chocolate Cake', FALSE), ('Green Apple Lollipop', FALSE);

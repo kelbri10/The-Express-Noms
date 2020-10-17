@@ -1,5 +1,5 @@
 const express = require('express'); 
-const burger = require('../models/burger'); 
+const sweets = require('../models/sweets'); 
 
 //create the router for the app
 //export router 
