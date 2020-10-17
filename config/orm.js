@@ -29,5 +29,4 @@ const updateOne = () => {
     
     connection.query(updateQuery, (err, result)=>{ 
         console.log('Dessert has been updated!'); 
-    }); 
-}
+    });
