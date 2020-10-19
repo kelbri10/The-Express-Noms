@@ -1,4 +1,4 @@
-# The-Express-Noms
+# Sweetie 
 
 ## Table of Contents 
 * [Description](#Description)
@@ -10,7 +10,7 @@
 * [License](#License)
 
 ## Description 
-Express Noms is an app for users who want to enjoy their favorite desserts and sweet foods without guilt. Enter the dessert you'd like to devour and nom away!
+Sweetie is an app for users who want to enjoy their favorite desserts and sweet foods without guilt. Enter the dessert you'd like to devour and nom away!
 
 ## Installation 
 To utilize this application and edit the code, be sure to run the following scripts in your CLI to install the necessary npm packages: 
