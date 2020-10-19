@@ -15,17 +15,23 @@ Express Noms is an app for users who want to enjoy their favorite desserts and s
 ## Installation 
 To utilize this application and edit the code, be sure to run the following scripts in your CLI to install the necessary npm packages: 
 
-Express Handlebars 
+**Express Handlebars** 
+Handlebars is a templating language that allows users to write expressions that are then replaced with input objects. 
+
 ```
 npm i express-handlebars
 ```
 
-Express JS library
+**Express JS**
+Express is a framework for NodeJS that simplifies the building and routing process. 
+
 ```
 npm i express
 ```
 
-MySQL 
+**MySQL** 
+MySQL is a database system that utilizes SQL in order to pull and insert information into databases through your localhost.
+
 ```
 npm i mysql
 ```
