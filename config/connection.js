@@ -13,6 +13,10 @@ if (process.env.JAWSDB_URL){
     }); 
 }; 
 
-connection.connect(); 
+connection.connect((err)=>{ 
+    if (err) throw err; 
+
+    console.log('You are now connected!'); 
+}); 
 
 module.exports  = connection; 
