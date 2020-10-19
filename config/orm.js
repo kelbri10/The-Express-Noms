@@ -2,32 +2,29 @@ const connection = require('connection.js');
 const { connect } = require('./connection');
 const consoleTable = require('console.table'); 
 
-const selectAll = () => { 
-     //select all burgers in the database
-     let selectQuery = `SELECT * FROM sweets`; 
+//methods to retrive and store data in my database 
+const orm = { 
 
-     connection.query(selectQuery, (err, result)=>{ 
-         console.table(result); 
-     })
+    selectAll = function () { 
+        //select all sweets in database 
+        //SELECT * FROM sweets
+        let query = `SELECT * FROM sweets`; 
+        connection.query(query, (err, result) => { 
+            if (err) throw err; 
+
+            return result; 
+        })
+    }, 
+
+    insertOne = function () { 
+        //insert new sweet into database 
+        
+    }, 
+
+    updateOne = function() { 
+        //update devoured boolean for sweets from false to true 
+
+    }
 }
 
-const insertOne = () => { 
-    //insert a burger into the database 
-    let insertQuery = `INSERT INTO sweets (dessert_name, devoured)
-                        VALUES ()`; 
-
-    connection.query(insertQuery, (err, result)=>{ 
-        console.log('Dessert has been inserted'); 
-    }); 
-}
-
-const updateOne = () => { 
-    //update burger in the database 
-    let updateQuery = `UPDATE sweets
-                        SET sweets.devoured = 
-                        WHER sweets.dessert_name = `; 
-    
-    connection.query(updateQuery, (err, result)=>{ 
-        console.log('Dessert has been updated!'); 
-    });
-}
+module.exports = orm; 
