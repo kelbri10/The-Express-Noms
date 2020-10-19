@@ -3,8 +3,8 @@
 ## Table of Contents 
 * [Description](#Description)
 * [Installation](#Installation)
-* [Features](#Usage)
-* [Coming Soon](#Coming-Soon)
+* [Features](#Features)
+* [Demo](#Demo)
 * [Extended Reading](#Extended-Reading)
 * [Contributors](#Contributors)
 * [License](#License)
@@ -13,7 +13,7 @@
 Express Noms is an app for users who want to enjoy their favorite desserts and sweet foods without guilt. Enter the dessert you'd like to devour and nom away!
 
 ## Installation 
-To utilize this application, be sure to run the following scripts in your CLI to install the necessary npm packages: 
+To utilize this application and edit the code, be sure to run the following scripts in your CLI to install the necessary npm packages: 
 
 Express Handlebars 
 ```
@@ -29,8 +29,11 @@ MySQL
 ```
 npm i mysql
 ```
+## Features 
 
 ## Demo 
+View the full demo live on Heroku: 
+
 
 ## Extended Reading 
 Click the links below to learn more about the technologies used to build this application: 
