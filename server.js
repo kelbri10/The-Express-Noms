@@ -1,5 +1,5 @@
 //imports npm packages, js files 
-const express = requires('express'); 
+const express = require ('express'); 
 const router  = require('./controllers/sweets_controller'); 
 const exphbs = require('express-handlebars');  
 
