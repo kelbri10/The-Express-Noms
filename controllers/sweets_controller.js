@@ -6,15 +6,26 @@ const router = express.Router();
 
 //get request
 router.get('/', (req, res) => { 
-    res.send('Hello World'); 
+    res.redirect('/sweets'); 
+}); 
+
+router.get('/sweets', (req,res)=>{ 
+    sweets.selectAll(function(sweets) { 
+        res.render('index', {sweets: sweets}); 
+    }); 
 })
+
 //post request 
-router.post('/api/sweets', (req,res)=>{ 
-
+router.get('/sweets/create', (req,res) => { 
+    sweets.insertOne('/'); 
 })
-//get dessert by id
-router.put('/api/snacks/:id', (req,res) => { 
 
-})
+//put request by id
+router.put('/sweets/:id', (req,res) => { 
+    sweets.updateOne(req.params.id, function (result) { 
+        res.sendStatus(200); 
+    }); 
+}); 
+
 //export router 
 module.exports = router; 

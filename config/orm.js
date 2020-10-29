@@ -5,25 +5,36 @@ const consoleTable = require('console.table');
 //methods to retrive and store data in my database 
 const orm = { 
 
-    selectAll = function () { 
-        //select all sweets in database 
-        //SELECT * FROM sweets
-        let query = `SELECT * FROM sweets`; 
-        connection.query(query, (err, result) => { 
+    all: (tableInput, cb) => { 
+        let query = `SELECT * FROM ??`; 
+
+        connection.query(query, [tableInput], (err, result) => { 
             if (err) throw err; 
 
-            return result; 
+            cb(result); 
+        })
+    },
+
+    create: (table, cols, vals, cb) => { 
+        let query  = `INSERT INTO ()
+                    VALUES ()`
+        
+        connection.query(query, (err, result) => {
+            if (err) throw err; 
+
+            cb(result); 
         })
     }, 
 
-    insertOne = function () { 
-        //insert new sweet into database 
-        
-    }, 
+    update: (table, obj, condition, cb) => {
+        let query = `UPDATE 
+                    SET 
+                    WHERE `
+        connection.query(query, (err, result) => {
+            if(err) throw err; 
 
-    updateOne = function() { 
-        //update devoured boolean for sweets from false to true 
-
+            cb(result); 
+        });
     }
 }
 
