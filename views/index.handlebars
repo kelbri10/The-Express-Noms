@@ -1,0 +1,26 @@
+<header>
+    <h1> Saweetie </h1>
+</header>
+
+
+<section>
+    <h2>Desserts waiting to be devoured!</h2>
+    <ul>
+        {{#each sweets}}
+                {{#unless devoured}}
+                        {{> sweets/sweets-block devoured=true}}
+                {{/unless}}
+        {{/each}}
+    </ul>
+</section>
+
+<section>
+    <h2>Desserts you devoured!</h2>
+    <ul>
+        {{#each sweets}}
+                {{#if devoured}}
+                        {{> sweets/sweets-block devoured=false}}
+                {{/if}}
+        {{/each}}
+    </ul>
+</section>
