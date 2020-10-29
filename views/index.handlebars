@@ -1,9 +1,12 @@
-<header>
+<header class = 'col-12'>
     <h1> Saweetie </h1>
 </header>
 
-
 <section>
+
+</section>
+
+<section id = 'not-devoured' class='col-md-6'>
     <h2>Desserts waiting to be devoured!</h2>
     <ul>
         {{#each sweets}}
@@ -14,7 +17,7 @@
     </ul>
 </section>
 
-<section>
+<section id = 'devoured' class='col-md-6'>
     <h2>Desserts you devoured!</h2>
     <ul>
         {{#each sweets}}
@@ -24,3 +27,12 @@
         {{/each}}
     </ul>
 </section>
+
+<form class='create-form'>
+    <div class = 'form-group'>
+        <label for = 'dessert'>Dessert: </label>
+        <input type="text" id = 'de' name='dessert'>
+    </div>
+
+    <button class='btn btn-outline-primary' type='submit'>Add Your Sweet!</button>
+</form>
