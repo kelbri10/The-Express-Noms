@@ -17,9 +17,6 @@ if (process.env.JAWSDB_URL){
 }; 
   
 // Export connection for orm.js to use.
-connection.connect(function(err) {
-    if (err) throw err; 
-    console.log('You are now connected');
-});
+connection.connect();
 
 module.exports = connection; 
