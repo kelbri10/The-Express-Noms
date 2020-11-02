@@ -1,22 +1,25 @@
-const mysql = require('mysql'); 
+const mysql = require('mysql');  
+let connection; 
 
 if (process.env.JAWSDB_URL){ 
-    let connection = mysql.createConnection(process.env.JAWSDB_URL); 
+    connection = mysql.createConnection(process.env.JAWSDB_URL); 
+    
 }else{ 
-    let connection  = mysql.createConnection({ 
+    connection  = mysql.createConnection({ 
         host: 'localhost', 
         port: 3306, 
         user: 'root', 
-        password: '', 
-        database: 'sweets_db', 
-        insecureAuth: true
+        password: 'Phoenix25', 
+        database: 'sweets_db'
     }); 
+    
+   
 }; 
-
-connection.connect((err)=>{ 
+  
+// Export connection for orm.js to use.
+connection.connect(function(err) {
     if (err) throw err; 
+    console.log('You are now connected');
+});
 
-    console.log('You are now connected!'); 
-}); 
-
-module.exports  = connection; 
+module.exports = connection; 

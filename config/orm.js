@@ -1,10 +1,9 @@
-const connection = require('connection.js'); 
-const { connect } = require('./connection');
-const consoleTable = require('console.table'); 
+const connection = require('../config/connection');
+
 
 //helper function to generate question marks 
 const printQuestionMarks = num => { 
-    let arr = []; 
+    const arr = []; 
 
     for (let i = 0; i < num; i++) { 
         arr.push('?'); 
@@ -15,7 +14,7 @@ const printQuestionMarks = num => {
 
 //helper function to convert object key/value pairs to SQL syntax 
 const objToSql = ob => { 
-    let arr = []; 
+    const arr = []; 
 
     for (let key in ob) { 
         let value = ob[key]; 
@@ -36,9 +35,9 @@ const objToSql = ob => {
 const orm = { 
 
     all: (tableInput, cb) => { 
-        let query = `SELECT * FROM ${tableInput}`; 
+        const queryString = `SELECT * FROM ${tableInput}`; 
 
-        connection.query(query, (err, result) => { 
+        connection.query(queryString, (err, result) => { 
             if (err) throw err; 
 
             cb(result); 
@@ -46,9 +45,9 @@ const orm = {
     },
 
     create: (table, cols, vals, cb) => { 
-        let query  = 'INSERT INTO ' + table + ' (' + cols.toString() + ') VALUES (' + printQuestionMarks(vals.length) + ') '; 
+        const queryString  = 'INSERT INTO ' + table + ' (' + cols.toString() + ') VALUES (' + printQuestionMarks(vals.length) + ') '; 
         
-        connection.query(query, vals, (err, result) => {
+        connection.query(queryString, vals, (err, result) => {
             if (err) throw err; 
 
             cb(result); 
@@ -56,9 +55,9 @@ const orm = {
     }, 
 
     update: (table, objColVals, condition, cb) => {
-        let query = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition; 
+        const queryString = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition; 
         
-        connection.query(query, (err, result) => {
+        connection.query(queryString, (err, result) => {
             if(err) throw err; 
 
             cb(result); 

@@ -6,10 +6,8 @@ const router = express.Router();
 
 //get request
 router.get('/', (req, res) => { 
-    sweet.all( data => { 
-        let hbsObject = { 
-            sweets: data 
-        }; 
+    sweet.all( (data) => { 
+        const hbsObject = { sweets: data }; 
 
         console.log(hbsObject); 
         res.render('index', hbsObject); 
@@ -18,14 +16,14 @@ router.get('/', (req, res) => {
 
 //post request 
 router.post('/api/sweets', (req, res) => { 
-    sweet.create(['dessert', 'devoured'], [req.body.dessert, req.body.devoured], (result) => { 
+    sweet.create(['dessert_name', 'devoured'], [req.body.dessert_name, req.body.devoured], (result) => { 
         res.json({ id: result.insertId }); 
     })
 })
 
 //put request by id
 router.put('/api/sweets/:id', (req,res) => { 
-    let condition = `id = ${req.params.id}`;  
+    const condition = `id = ${req.params.id}`;  
 
     sweet.update({ devoured: req.body.devoured }, condition, (result) => { 
         if (result.changedRows == 0) { 
