@@ -2,6 +2,8 @@
     <h3>{{dessert_name}}</h3>
 
     {{#if devoured}}
-    <button class='btn btn-primary change-state' data-id='{{id}}' data-devoured='{{devoured}}'>Devour It!</button>
+        <button class='btn btn-primary change-state' data-id='{{id}}' data-newDevoured='{{devoured}}'>
+            Devour It!
+        </button>
     {{/if}}
 </li>

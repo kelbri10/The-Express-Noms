@@ -1,27 +1,27 @@
-const { json } = require("express");
-
 $(function() {
 
     $('.change-state').on('click', (event) => {
-        const id = $(this).data('id'); 
+        const id = $('.btn').data('id'); 
 
-        const newDevoured = $(this).data('newdevoured')
-        const newDevouredState = {devoured: newDevoured}; 
+        const newStatus = $('.btn').data('newDevoured');
+        const newDevouredState = { devoured: newStatus }; 
         
+        console.log(id); 
+        console.log(newStatus); 
+        console.log(JSON.stringify(newDevouredState)); 
         //PUT request 
-        $.ajax('/api/sweets/' + id, {
-            type: 'PUT', 
-            data: newDevouredState
-        }).then( () => { 
-            console.log('cahanged devoured to', newDevoured); 
-            location.reload(); 
-        }
-        )
-    })
+        //$.ajax('/api/sweets/' + id, {
+            //type: 'PUT', 
+           // data: newDevouredState
+      //  }).then( () => { 
+     
+        //    location.reload(); 
+       // });
+    });
 
     $('.create-form').on('submit', (event) => {
         event.preventDefault(); 
-
+        
         const newSweet = { 
             dessert_name: $('#de').val().trim()
         }; 
@@ -31,7 +31,7 @@ $(function() {
             type: 'POST', 
             data: newSweet
         }).then(() => { 
-                console.log('created new dessert'); 
+
                 location.reload(); 
             });
     });
