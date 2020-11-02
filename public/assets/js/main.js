@@ -1,22 +1,22 @@
 $(function() {
 
-    $('.change-state').on('click', (event) => {
-        const id = $('.btn').data('id'); 
+    $('.change-state').on('click', function(event) {
+        const id = $(this).data('id'); 
 
-        const newStatus = $('.btn').data('newDevoured');
+        const newStatus = $(this).data('newdevoured');
         const newDevouredState = { devoured: newStatus }; 
         
         console.log(id); 
         console.log(newStatus); 
         console.log(JSON.stringify(newDevouredState)); 
         //PUT request 
-        //$.ajax('/api/sweets/' + id, {
-            //type: 'PUT', 
-           // data: newDevouredState
-      //  }).then( () => { 
+        $.ajax('/api/sweets/' + id, {
+            type: 'PUT', 
+            data: newDevouredState
+        }).then( () => { 
      
-        //    location.reload(); 
-       // });
+            location.reload(); 
+        });
     });
 
     $('.create-form').on('submit', (event) => {
